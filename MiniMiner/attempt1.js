@@ -16,8 +16,8 @@ var objec = {
 
 const check = (digest, difficulty) => {
     // console.log(digest)
-    var quotient = difficulty/8;
-    var remainder = difficulty%8;
+    var quotient = difficulty/4;
+    var remainder = difficulty%4;
     
     var substr_digest;
     if(remainder) substr_digest = digest.substring(0,quotient+1)
@@ -67,7 +67,7 @@ const solve = (data) => {
     var solution = {
         nonce: nonce
     }
-    axios.post("https://hackattic.com/challenges/mini_miner/solve?access_token=99ad6fa897e453f5",solution)
+    axios.post("https://hackattic.com/challenges/mini_miner/solve?access_token=99ad6fa897e453f5&playground=1",solution)
         .then(res => console.log(res.data))
 }
 
